@@ -11,7 +11,7 @@ System.out.print("Mark of subject "+ (i+1) + " out of 100:");
 marks[i]=sc.nextDouble();
 total=total+marks[i];
 }System.out.println("--------RESULT--------");
-System.out.println("Total Marks:");
+System.out.println("Total Marks:"+total);
 double average=total/marks.length;
 System.out.println("Average percentage:" + average + "%");
 if(average>=90){
