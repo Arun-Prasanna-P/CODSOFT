@@ -1,36 +1,37 @@
 import java.util.Scanner;
 import java.util.Random;
-class Main{
-public static void main(String[]args){
-Scanner scan=new Scanner(System.in);
-Random random=new Random();
-int secretNumber=random.nextInt(100);
-int maxattempts=5;
-int guess;
-int attempts=0;
-System.out.println("Guess the number(1-100)!You have 5 attempts!");
-while(attempts<maxattempts)
-{
-System.out.println("Attempt "+(attempts+1)+" Enter your guess:");
-guess=scan.nextInt();
-attempts++;
-if(guess==secretNumber)
-{
-System.out.println("You guessed it right in"+attempts+"Attempts!");
-}
-else if(guess<secretNumber)
-{
-System.out.println("Too High!");
-}
-else
-{
-System.out.println("Too Low");
-}
-if(attempts==maxattempts)
-{
-System.out.println("You have used all the 5 attempts!");
-System.out.println("The secret Number is "+secretNumber);
-}
-}
-scan.close();
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Random random = new Random();
+        int secretNumber = random.nextInt(100) + 1; // +1 to make it 1-100
+        int maxAttempts = 5;
+        int guess;
+        int attempts = 0;
+
+        System.out.println("Guess the number (1-100)! You have 5 attempts!");
+
+        while (attempts < maxAttempts) {
+            System.out.println("Attempt " + (attempts + 1) + ": Enter your guess:");
+            guess = scan.nextInt();
+            attempts++;
+
+            if (guess == secretNumber) {
+                System.out.println("You guessed it right in " + attempts + " attempt(s)!");
+                break;
+            } else if (guess < secretNumber) {
+                System.out.println("Too Low!");
+            } else {
+                System.out.println("Too High!");
+            }
+
+            if (attempts == maxAttempts) {
+                System.out.println("You have used all 5 attempts!");
+                System.out.println("The secret number was: " + secretNumber);
+            }
+        }
+
+        scan.close();
+    }
 }
